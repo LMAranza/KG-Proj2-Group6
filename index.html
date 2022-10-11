@@ -11,36 +11,225 @@
     
 </head>
 <style>
-    body {
-        background-color: #e1dfdb;
-    }
-    fa {
-        font-size: 100px;
-    }
+    @font-face {
+          font-family: 'Coolvetica';
+          src: url(Fonts/coolvetica\ rg.otf);
+        }
+
+        @font-face {
+          font-family: 'Sukhumvit';
+          src: url(Fonts/SukhumvitSet-SemiBold.ttf);
+        }
+        
+        @font-face {
+          font-family: 'SukhumvitThin';
+          src: url(Fonts/SukhumvitSet-Thin.ttf);
+        }    
+        body {
+            background-color: #e1dfdb;
+        }
+        fa {
+            font-size: 100px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Coolvetica';
+        }
+
+        .highlighter {
+            color: #c64931;
+            text-shadow: 1px 2px #000;
+        }
+
+        .btn {
+            background-color: #a6432c;
+            color: white;
+            font-family: 'SukhumvitThin';
+        }
+
+        .nav {
+            font-family: 'SukhumvitThin';
+        }
+
+        .nav-link {
+            color: #a6432c;
+        }
 </style>
 
 <body>
     <div class="container-fluid heading bg-light">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-0 border-bottom">
             <a href="index.html" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
               <img src="logo.png" class="bi me-2" width="115" height="60" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use>
             </a>
       
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#" class="nav-link px-2 link-secondary">Menu</a></li>
-              <li><a href="#" class="nav-link px-2 link-dark">About Us</a></li>
-              <li><a href="#" class="nav-link px-2 link-dark">Contact Us</a></li>
+              <li><a href="#" class="nav-link px-2 link-secondary">menu</a></li>
+              <li><a href="#" class="nav-link px-2 link-dark">about us</a></li>
+              <li><a href="#" class="nav-link px-2 link-dark">contact us</a></li>
               <a href="#" class="nav-link px-2 link-secondary"><i class="fa fa-duotone fa-cart-shopping"></li></i></a>
                   <a href="#" class="nav-link px-2 link-secondary"><i class="fa fa-regular fa-user"></li></i></a>
             </ul>
       
             <div class="col-md-3 text-end">
-              <button type="button" class="btn rounded-pill btn-success">Sign-up</button>
+              <button type="button" class="btn rounded-pill">sign up</button>
             </div>
           </header>
     </div>
+    
+    <div class="d-flex min-vh-100" lc-helper="background" style="background:url(herocover.jpg)  center / cover no-repeat; background-color:#444; background-blend-mode: overlay;">
+	<div class="align-self-center text-center text-light col-md-8 offset-md-2">
+		<div class="lc-block mb-4">
+			<div editable="rich">
+				<h1 class="display-3" style="text-shadow: 1px 2.5px #000;">WELCOME TO THE <span class="highlighter">CARNE</span> ALLEY!</h1>
+			</div>
+		</div>
 
+		<div class="lc-block">
+			<div editable="rich">
+				<h3 class="lead">Insert Tagline here</h3>
+			</div>
+		</div>
 
+		<div class="lc-block">
+			<svg onclick="if (!document.querySelector('body').classList.contains('livecanvas-is-editing') ) this.closest('section').nextElementSibling.scrollIntoView({ behavior: 'smooth'  });" width="4em" height="4em" viewBox="0 0 16 16" class="text-light" fill="currentColor" xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon">
+				<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+				<path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"></path>
+			</svg>
+		</div>
+	</div>
+    </div>
+
+    <div class="container text-center mt-5 mb-5">
+        <h2 class=" mb-4">FEATURED STEAKS</h2>
+        <div class="card-group">
+            <div class="card mx-2">
+              <img src="steaks/brazilianribeye1.jpg" class="card-img-top" alt="BrazilianRibeye">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card mx-2">
+              <img src="steaks/brazilianribeye1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card mx-2">
+              <img src="steaks/brazilianribeye1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <section class="container w-100 p-4">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-10 col-xl-8 text-center">
+            <h2 class="mb-4">CUSTOMER REVIEWS</h2>
+            <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure
+              provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
+              pariatur veniam.
+            </p>
+          </div>
+        </div>
+  
+        <div class="row text-center">
+          <div class="col-md-4 mb-5 mb-md-0">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" class="rounded-circle shadow-1-strong" width="150" height="150">
+            </div>
+            <h5 class="mb-3">Maria Samantha</h5>
+            <h6 class="text-primary mb-3">Web Developer</h6>
+            <p class="px-xl-3">
+              <i class="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center mb-0">
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+              <li>
+                <i class="fas fa-star-half-alt fa-sm"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-5 mb-md-0">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" class="rounded-circle shadow-1-strong" width="150" height="150">
+            </div>
+            <h5 class="mb-3">Lisa Cudrow</h5>
+            <h6 class="text-primary mb-3">Graphic Designer</h6>
+            <p class="px-xl-3">
+              <i class="fas fa-quote-left pe-2"></i>Ut enim ad minima veniam, quis nostrum
+              exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center mb-0">
+              <li>
+                <i class="fas fa-star fa-sm star"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm star"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm star"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-0">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" class="rounded-circle shadow-1-strong" width="150" height="150">
+            </div>
+            <h5 class="mb-3">John Smith</h5>
+            <h6 class="text-primary mb-3">Marketing Specialist</h6>
+            <p class="px-xl-3">
+              <i class="fas fa-quote-left pe-2"></i>At vero eos et accusamus et iusto odio dignissimos
+              ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center mb-0">
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+              <li>
+                <i class="fas fa-star fa-sm"></i>
+              </li>
+              <li>
+                <i class="far fa-star fa-sm"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <br><br>
+      </section>
     
 </body>
 </html>
