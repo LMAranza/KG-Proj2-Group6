@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="store.js" async></script>
+
 </head>
 <style>
     @font-face {
@@ -94,8 +95,7 @@
               <li><a href="#" class="nav-link px-2 link-secondary">menu</a></li>
               <li><a href="#" class="nav-link px-2 link-dark">about us</a></li>
               <li><a href="#" class="nav-link px-2 link-dark">contact us</a></li>
-              <a href="#" class="nav-link px-2 link-secondary"><i class="fa fa-duotone fa-cart-shopping"></li></i></a>
-                  
+              <a href="#" class="nav-link px-2 link-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa fa-duotone fa-cart-shopping"></li></i></a>
             </ul>
       
             <div class="col-md-3 text-end">
@@ -106,7 +106,48 @@
             </div>
           </header>
     </div>
-    
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel ">CART</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <section class="container content-section">
+        <div class="cart-items">
+          <div class="my-4 cart-row">
+            <div class="col cart-item cart-column text-center">
+              <img class="cart-item-image" src="steaks/brazilianribeye1.jpg" width="100" height="100">
+              <span class="cart-item-title">Brazilian Ribeye</span>
+            </div>
+            <div class="text-center">
+            <span class="col cart-price cart-column text-center">₱980</span>
+            </div>
+            <div class="col cart-quantity cart-column text-center">
+                <input class="col cart-quantity-input" type="number" value="1" style="width: 3rem;">
+                <button class="col btn btn-danger" type="button">remove</button>
+            </div>
+          </div>
+          <div class="my-4 cart-row">
+            <div class="cart-item cart-column">
+              <img class="cart-item-image" src="steaks/brazilianribeye1.jpg" width="100" height="100">
+              <span class="cart-item-title">Brazilian Ribeye</span>
+            </div>
+            <span class="cart-price cart-column">₱980</span>
+            <div class="cart-quantity cart-column">
+                <input class="cart-quantity-input" type="number" value="1">
+                <button class="btn btn-danger" type="button">remove</button>
+            </div>
+          </div>
+      </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">₱0</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+    </section>
+    </div>
+
+    <section>
     <h2 class="container my-5 text-center">STEAKS</h2>
     <div class="container">
       <p class="lead">filter by:</p>
@@ -124,27 +165,29 @@
         </ul>
       </div>
     </div>
+  </section>
 
 
     <div class="container text-center mt-5 mb-3">
         <div class="card-group mx-4 my-4">
             <div class="card mx-2">
-                <div class="img1">      
-                  <img src="steaks/brazilianribeye2.jpg" class="img-fluid ihv" alt="BrazilianRibeye">
+                <div class="img1 shop-item-image">      
+                  <img src="steaks/brazilianribeye2.jpg" class="img-fluid ihv shop-item-image" alt="BrazilianRibeye">
                 </div>  
-                  <div class="card-body">
-                    <h3 class="card-title my-2">BRAZILIAN RIBEYE</h3>
-                    <h5 class="card-subtitle"><u>₱980/ 1kg</u></h5>
-                    <p class="card-text my-2 text-center">Enter steak details here</p>
+                  <div class="card-body shop-item">
+                    <h3 class="card-title my-2 shop-item-title">BRAZILIAN RIBEYE</h3>
+                    <h5 class="card-subtitle shop-item-price"><u>₱980/ 1kg</u></h5>
+                    <p class="card-text my-2 text-center shop-item-details">Enter steak details here</p>
                     <div class ="col">
                       <div class="text-center ml-auto">
-                        <label>Quantity: </label>
-                        <button type="button" class="btn rounded-pill"><i class="fa-regular fa-plus"></i></button>
+                        <label>Quantity: <input id="form1" min="0" name="quantity" value="1" type="number"
+                          class="form-control form-control-sm text-center" style="width: 3rem;"/></label>
+                        <button type="button" class="btn rounded-pill" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" ><i class="fa-regular fa-plus"></i></button>
                         |
-                        <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
+                        <button type="button" class="btn rounded-pill" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><i class="fa-solid fa-minus"></i></button>
                       </div>
                       <div class="text-end">
-                        <button type="button" class="btn mt-1">add to cart</button>
+                        <button type="button" class="btn mt-1 shop-item-button" >add to cart</button>
                       </div>
                     </div>
                   </div>
@@ -166,7 +209,7 @@
                       <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
                     </div>
                     <div class="text-end">
-                      <button type="button" class="btn mt-1">add to cart</button>
+                      <button type="button" class="btn mt-1 atc">add to cart</button>
                     </div>
                   </div>
                 </div>
@@ -187,7 +230,7 @@
                     <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
                   </div>
                   <div class="text-end">
-                    <button type="button" class="btn mt-1">add to cart</button>
+                    <button type="button" class="btn mt-1 atc">add to cart</button>
                   </div>
                 </div>
               </div>
@@ -211,7 +254,7 @@
                         <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
                       </div>
                       <div class="text-end">
-                        <button type="button" class="btn mt-1">add to cart</button>
+                        <button type="button" class="btn mt-1 atc">add to cart</button>
                       </div>
                     </div>
                   </div>
@@ -233,7 +276,7 @@
                       <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
                     </div>
                     <div class="text-end">
-                      <button type="button" class="btn mt-1">add to cart</button>
+                      <button type="button" class="btn mt-1 atc">add to cart</button>
                     </div>
                   </div>
                 </div>
@@ -254,7 +297,7 @@
                     <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
                   </div>
                   <div class="text-end">
-                    <button type="button" class="btn mt-1">add to cart</button>
+                    <button type="button" class="btn mt-1 atc">add to cart</button>
                   </div>
                 </div>
               </div>
@@ -278,7 +321,7 @@
                         <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
                       </div>
                       <div class="text-end">
-                        <button type="button" class="btn mt-1">add to cart</button>
+                        <button type="button" class="btn mt-1 atc">add to cart</button>
                       </div>
                     </div>
                   </div>
@@ -300,7 +343,7 @@
                       <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
                     </div>
                     <div class="text-end">
-                      <button type="button" class="btn mt-1">add to cart</button>
+                      <button type="button" class="btn mt-1 atc">add to cart</button>
                     </div>
                   </div>
                 </div>
@@ -321,7 +364,7 @@
                     <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
                   </div>
                   <div class="text-end">
-                    <button type="button" class="btn mt-1">add to cart</button>
+                    <button type="button" class="btn mt-1 atc">add to cart</button>
                   </div>
                 </div>
               </div>
