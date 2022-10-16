@@ -51,8 +51,9 @@ function quantityChanged(event) {
 
 function addToCartClicked(event) {
     var button = event.target
-    var shopItem = button.parentElement.parentElement
+    var shopItem = button.parentElement
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    console.log(shop-item-title)
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
     addItemToCart(title, price, imageSrc)
