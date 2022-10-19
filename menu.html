@@ -9,7 +9,9 @@
 	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
+    <style>
 
+    </style>
 </head>
 <style>
     @font-face {
@@ -107,14 +109,15 @@
           </header>
     </div>
 
+    <!-- START OF CART CANVAS -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
         <h5 id="offcanvasRightLabel ">CART</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <section class="container content-section">
-        <div class="cart-items">
-          <div class="my-4 cart-row">
+        <div class="cart-items" id="cartCanvas">
+          <!-- <div class="my-4 cart-row">
             <div class="col cart-item cart-column text-center">
               <img class="cart-item-image" src="steaks/brazilianribeye1.jpg" width="100" height="100">
               <span class="cart-item-title">Brazilian Ribeye</span>
@@ -126,8 +129,9 @@
                 <input class="col cart-quantity-input" type="number" value="1" style="width: 3rem;">
                 <button class="col btn btn-danger" type="button">remove</button>
             </div>
-          </div>
-          <div class="my-4 cart-row">
+          </div> -->
+
+          <!-- <div class="my-4 cart-row">
             <div class="cart-item cart-column">
               <img class="cart-item-image" src="steaks/brazilianribeye1.jpg" width="100" height="100">
               <span class="cart-item-title">Brazilian Ribeye</span>
@@ -137,15 +141,17 @@
                 <input class="cart-quantity-input" type="number" value="1">
                 <button class="btn btn-danger" type="button">remove</button>
             </div>
-          </div>
+          </div> -->
       </div>
         <div class="cart-total">
             <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">₱0</span>
+            <span class="cart-total-price">₱<span id="totalPrice">0</span></span>
         </div>
         <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
     </section>
     </div>
+    <!-- END OF CART CANVAS -->
+
 
     <section>
     <h2 class="container my-5 text-center">STEAKS</h2>
@@ -167,32 +173,34 @@
     </div>
   </section>
 
-
+  
     <div class="container text-center mt-5 mb-3">
         <div class="card-group mx-4 my-4">
-            <div class="card mx-2 shop-item">
-                <div class="shop-item-image img1" id="shopitemimage">      
-                  <img src="steaks/brazilianribeye2.jpg" class="img-fluid ihv shop-item-image" alt="BrazilianRibeye">
-                </div>  
-                  <div class="card-body">
-                    <h3 class="shop-item-title card-title my-2">BRAZILIAN RIBEYE</h3>
-                    <h5 class="shop-item-price card-subtitle"><u>₱980/ 1kg</u></h5>
-                    <p class="card-text my-2 text-center shop-item-details">Enter steak details here</p>
-                    <div class ="col">
-                      <div class="text-center ml-auto">
-                        <label>Quantity: <input id="form1" min="0" name="quantity" value="1" type="number"
-                          class="form-control form-control-sm text-center" style="width: 3rem;"/></label>
-                        <button type="button" class="btn rounded-pill" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" ><i class="fa-regular fa-plus"></i></button>
-                        |
-                        <button type="button" class="btn rounded-pill" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><i class="fa-solid fa-minus"></i></button>
-                      </div>
-                      <div class="text-end">
-                        <button type="button" class="shop-item-button btn mt-1" onclick="addToCartClicked()">add to cart</button>
-                      </div>
-                    </div>
+            <!-- FIRST ITEM -->
+            <div class="card mx-2 shop-item" id="item1">
+              <div class="shop-item-image img1" id="shopitemimage">      
+                <img src="steaks/brazilianribeye2.jpg" class="img-fluid ihv shop-item-image" alt="BrazilianRibeye">
+              </div>  
+
+              <div class="card-body">
+                <h3 class="shop-item-title card-title my-2" id="item1">BRAZILIAN RIBEYE</h3>
+                <h5 class="shop-item-price card-subtitle"><u>₱<span>980</span>/ 1kg</u></h5>
+                <p class="card-text my-2 text-center shop-item-details">Enter steak details here</p>
+                <div class ="col">
+                  <div class="text-center ml-auto">
+                    <label>Quantity: <input id="form1" min="0" name="quantity" value="1" type="number"
+                      class="form-control form-control-sm text-center" style="width: 3rem;"/></label>
+                    <button type="button" class="btn rounded-pill" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" ><i class="fa-regular fa-plus"></i></button>
+                    |
+                    <button type="button" class="btn rounded-pill" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><i class="fa-solid fa-minus"></i></button>
                   </div>
+                  <div class="text-end">
+                    <button type="button" class="shop-item-button btn mt-1" onclick="addToCart(item1)">add to cart</button>
+                  </div>
+                </div>
               </div>
-            
+            </div>
+            <!-- END OF FIRST ITEM -->
             <div class="card mx-2">
               <div class="img1">      
                 <img src="steaks/brazilianribeye2.jpg" class="img-fluid ihv" alt="BrazilianRibeye">
@@ -204,8 +212,7 @@
                   <div class ="col">
                     <div class="text-center ml-auto">
                       <label>Quantity: </label>
-                      <button type="button" class="btn rounded-pill"><i class="fa-regular fa-plus"></i></button>
-                      |
+                      <button type="button" class="btn rounded-pill"><i class="fa-regular fa-plus"></i></button>|
                       <button type="button" class="btn rounded-pill"><i class="fa-solid fa-minus"></i></button>
                     </div>
                     <div class="text-end">
@@ -467,6 +474,7 @@
         </div>
     </footer>
       
-    <script src="store.js" async></script>
+    <!-- <script src="store.js" async></script> -->
+    <script src="addtoCart.js"></script>
 </body>
 </html>
